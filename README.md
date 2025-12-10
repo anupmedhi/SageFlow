@@ -1,4 +1,4 @@
-# Flow - Student Wellbeing Platform
+# SageFlow - Student Wellbeing Platform
 
 A premium, modern web + mobile UI for checking student wellbeing.
 
