@@ -5,7 +5,7 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
     return (
         <div style={{ display: 'flex' }}>
             <Sidebar />
-            <main className={styles.main} style={{ marginLeft: 260, width: 'calc(100% - 260px)', padding: '2.5rem 3rem' }}>
+            <main className={styles.main}>
                 {children}
             </main>
         </div>

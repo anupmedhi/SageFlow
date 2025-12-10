@@ -4,4 +4,15 @@
     padding: 2.5rem 3rem;
     background-color: var(--bg-app);
     width: calc(100% - 260px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        padding-bottom: 6rem;
+        /* Space for bottom nav */
+    }
 }

@@ -1,8 +1,11 @@
+/* ... (keep existing desktop styles) */
 .title {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
+    /* Bold from Jakarta */
     color: var(--text-main);
     margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
 .subtitle {
@@ -36,7 +39,8 @@
     color: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 20px 40px -10px rgba(108, 92, 231, 0.4);
+    /* Pro shadow */
 }
 
 .checkInContent {
@@ -47,15 +51,16 @@
 
 .checkInTitle {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1rem;
+    letter-spacing: -0.02em;
 }
 
 .checkInText {
     font-size: 1.125rem;
     opacity: 0.95;
     margin-bottom: 2rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .checkInDecor {
@@ -71,6 +76,7 @@
     border-radius: 24px;
     padding: 2rem;
     box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .sectionHeader {
@@ -95,7 +101,8 @@
     flex: 1;
     background: var(--bg-app);
     border: 1px solid rgba(0, 0, 0, 0.02);
-    border-radius: 16px;
+    border-radius: 20px;
+    /* Better radius */
     height: 7rem;
     display: flex;
     flex-direction: column;
@@ -103,13 +110,7 @@
     justify-content: center;
     gap: 0.5rem;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.moodBtn:hover {
-    transform: translateY(-4px);
-    background: white;
-    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .activeMood {
@@ -148,11 +149,12 @@
     align-items: center;
     gap: 1rem;
     box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .statIcon {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -168,8 +170,8 @@
 }
 
 .statInfo div {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.75rem;
+    font-weight: 800;
     color: var(--text-main);
 }
 
@@ -184,7 +186,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    border-radius: 16px;
+    border-radius: 20px;
     background: var(--bg-app);
     transition: background 0.2s;
     cursor: pointer;
@@ -198,7 +200,7 @@
     width: 3.5rem;
     height: 3.5rem;
     background: #DBEAFE;
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,7 +209,7 @@
 
 .resourceInfo h4 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-main);
     margin-bottom: 0.25rem;
 }
@@ -215,4 +217,47 @@
 .resourceInfo p {
     font-size: 0.875rem;
     color: var(--text-muted);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        /* Stack columns */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .checkInCard {
+        padding: 2rem;
+    }
+
+    .checkInContent {
+        max-width: 100%;
+    }
+
+    .checkInTitle {
+        font-size: 1.75rem;
+    }
+
+    .checkInDecor {
+        font-size: 8rem;
+        bottom: -20px;
+        right: -10px;
+    }
+
+    .moodGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Wrap moods on small screens */
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
 }
