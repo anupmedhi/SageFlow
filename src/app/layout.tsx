@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Roboto } from "next/font/google"; // Import Roboto
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,17 +7,10 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-});
-
-const roboto = Roboto({
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
   display: 'swap',
-  variable: '--font-roboto',
 });
 
 export const metadata: Metadata = {
@@ -33,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} ${roboto.variable} antialiased`}
+        className={`${inter.variable} ${jakarta.variable} antialiased`}
       >
         {children}
       </body>

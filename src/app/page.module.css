@@ -1,4 +1,4 @@
-/* ... (keep existing container/hero styles) */
+/* ... (keep existing container) */
 
 .container {
   min-height: 100vh;
@@ -7,194 +7,195 @@
   background: white;
   position: relative;
   overflow: hidden;
-  font-family: var(--font-outfit);
+  font-family: var(--font-jakarta), sans-serif;
+  /* Update root font */
 }
 
+/* Background Blurs - Tuned for elegance */
 .blob1 {
   position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  top: -15%;
+  left: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  /* softer */
   border-radius: 50%;
   z-index: 0;
-  animation: float 10s ease-in-out infinite;
+  animation: float 15s ease-in-out infinite;
 }
 
 .blob2 {
   position: absolute;
   bottom: -10%;
   right: -10%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(0, 184, 148, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0, 184, 148, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  /* softer */
   border-radius: 50%;
   z-index: 0;
-  animation: float 12s ease-in-out infinite reverse;
+  animation: float 18s ease-in-out infinite reverse;
 }
 
+/* ... Content Grid ... */
 .content {
   position: relative;
   z-index: 10;
-  max-width: 1200px;
+  max-width: 1280px;
+  /* Slightly wider */
   width: 100%;
   margin: 0 auto;
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 6rem;
-  /* Increased gap for better breathing room */
+  gap: 5rem;
   min-height: 100vh;
 }
 
-/* ... (Hero content stays similar but cleaned up) */
+/* Hero Typography */
 .heroContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding-left: 2rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.logoIcon {
-  width: 3.5rem;
-  height: 3.5rem;
-  background: var(--primary);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.25);
+  margin-bottom: 3rem;
 }
 
 .brandName {
   font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  /* Bolder */
+  color: #1E293B;
+  letter-spacing: -0.03em;
 }
 
 .title {
-  font-family: var(--font-roboto), Helvetica, sans-serif;
-  /* User requested Roboto or Helvetica */
-  font-size: 4rem;
-  line-height: 1.1;
-  font-weight: 900;
-  /* Bolder for Roboto */
-  color: var(--text-main);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
-  /* Adjusted specific for Roboto */
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 4.5rem;
+  /* Larger */
+  line-height: 1.05;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 2rem;
+  letter-spacing: -0.04em;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  max-width: 480px;
-  font-family: var(--font-inter);
+  color: #64748B;
+  line-height: 1.7;
+  max-width: 520px;
+  font-weight: 500;
 }
 
-/* Updated Role Section */
+/* Role Section - Enhanced Cards */
 .roleSection {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  /* Tighter vertical gap */
+  gap: 1.5rem;
   width: 100%;
-  max-width: 500px;
-  /* Constrain width for cleaner look */
+  max-width: 480px;
   margin-left: auto;
-  /* Push to right */
+  margin-right: 2rem;
 }
 
 .roleLabel {
   text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
   color: #94A3B8;
-  /* Lighter grey */
   margin-bottom: 0.5rem;
-  display: block;
+  padding-left: 0.5rem;
 }
 
 .roleCard {
   background: white;
-  border: 1px solid #F1F5F9;
-  /* Very subtle border */
-  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  padding: 1.5rem 1.75rem;
   border-radius: 20px;
-  /* Slightly softer curve */
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-  /* Ultra subtle shadow */
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium Hover Effect */
+.roleCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(108, 92, 231, 0.03), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .roleCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-  border-color: rgba(108, 92, 231, 0.3);
-  /* Slight primary highlight */
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+  /* Deep, soft shadow */
+  border-color: rgba(108, 92, 231, 0.4);
+}
+
+.roleCard:hover::after {
+  opacity: 1;
 }
 
 .roleIconWrapper {
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 50%;
+  border-radius: 16px;
+  /* Squircle */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   flex-shrink: 0;
+  transition: transform 0.3s;
 }
 
-/* Refined typography for readability */
-.roleText {
-  flex: 1;
+.roleCard:hover .roleIconWrapper {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 .roleText h3 {
-  font-size: 1.125rem;
-  /* 18px */
-  color: #1E293B;
-  /* Slate 800 */
-  margin-bottom: 0.15rem;
+  font-size: 1.15rem;
+  color: #0F172A;
+  margin-bottom: 0.25rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .roleText p {
   font-size: 0.925rem;
   color: #64748B;
-  /* Slate 500 */
   font-weight: 500;
 }
 
 .arrowIcon {
   color: #CBD5E1;
-  /* Slate 300 */
-  transition: transform 0.2s;
+  transition: all 0.3s;
 }
 
 .roleCard:hover .arrowIcon {
-  color: var(--primary);
-  transform: translateX(4px);
+  color: #6C5CE7;
+  transform: translateX(6px);
 }
 
-/* Animation utilities */
+/* ... Animations & Mobile ... */
 @keyframes float {
   0% {
     transform: translate(0, 0);
@@ -212,17 +213,22 @@
 @media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding-top: 2rem;
+    gap: 4rem;
+    padding: 3rem 1.5rem;
     text-align: center;
   }
 
   .heroContent {
+    padding-left: 0;
     align-items: center;
   }
 
   .brand {
     justify-content: center;
+  }
+
+  .title {
+    font-size: 3rem;
   }
 
   .roleSection {
