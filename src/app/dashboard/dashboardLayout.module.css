@@ -1,0 +1,7 @@
+.main {
+    margin-left: 260px;
+    min-height: 100vh;
+    padding: 2.5rem 3rem;
+    background-color: var(--bg-app);
+    width: calc(100% - 260px);
+}

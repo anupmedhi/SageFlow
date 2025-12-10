@@ -1,0 +1,160 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+}
+
+/* Editor Card */
+.editorCard {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+
+.editorCard:focus-within {
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--primary);
+}
+
+.toolbar {
+    display: flex;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.toolBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.toolBtn:hover {
+    background: var(--bg-app);
+    color: var(--text-main);
+}
+
+.activeTool {
+    background: #E0E7FF;
+    color: var(--primary);
+}
+
+.dateLabel {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #F1F5F9;
+    padding: 0.375rem 0.75rem;
+    border-radius: 99px;
+}
+
+.titleInput {
+    border: none;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    width: 100%;
+    margin-bottom: 1.5rem;
+    outline: none;
+    font-family: var(--font-outfit);
+}
+
+.titleInput::placeholder {
+    color: #CBD5E1;
+}
+
+.contentArea {
+    flex: 1;
+    border: none;
+    resize: none;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    outline: none;
+    font-family: var(--font-inter);
+    min-height: 200px;
+}
+
+.contentArea::placeholder {
+    color: #94A3B8;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Prompt chips */
+.prompts {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.promptChip {
+    background: white;
+    border: 1px solid #E2E8F0;
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.promptChip:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.1);
+}
+
+.magicBtn {
+    background: linear-gradient(135deg, #FF7675 0%, #FAB1A0 100%);
+    color: white;
+    border: none;
+}

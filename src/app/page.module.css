@@ -1,141 +1,235 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* ... (keep existing container/hero styles) */
 
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
+.container {
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
-.main {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-outfit);
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.blob1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.blob2 {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 184, 148, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 12s ease-in-out infinite reverse;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 6rem;
+  /* Increased gap for better breathing room */
+  min-height: 100vh;
 }
 
-.ctas a {
+/* ... (Hero content stays similar but cleaned up) */
+.heroContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.brand {
+  display: flex;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.logoIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--primary);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.25);
+}
+
+.brandName {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-family: var(--font-roboto), Helvetica, sans-serif;
+  /* User requested Roboto or Helvetica */
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 900;
+  /* Bolder for Roboto */
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  /* Adjusted specific for Roboto */
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+  font-family: var(--font-inter);
+}
+
+/* Updated Role Section */
+.roleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  /* Tighter vertical gap */
+  width: 100%;
+  max-width: 500px;
+  /* Constrain width for cleaner look */
+  margin-left: auto;
+  /* Push to right */
+}
+
+.roleLabel {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #94A3B8;
+  /* Lighter grey */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.roleCard {
+  background: white;
+  border: 1px solid #F1F5F9;
+  /* Very subtle border */
+  padding: 1.25rem 1.5rem;
+  border-radius: 20px;
+  /* Slightly softer curve */
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
   cursor: pointer;
-  width: fit-content;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  /* Ultra subtle shadow */
+}
+
+.roleCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  border-color: rgba(108, 92, 231, 0.3);
+  /* Slight primary highlight */
+}
+
+.roleIconWrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Refined typography for readability */
+.roleText {
+  flex: 1;
+}
+
+.roleText h3 {
+  font-size: 1.125rem;
+  /* 18px */
+  color: #1E293B;
+  /* Slate 800 */
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+}
+
+.roleText p {
+  font-size: 0.925rem;
+  color: #64748B;
+  /* Slate 500 */
   font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.arrowIcon {
+  color: #CBD5E1;
+  /* Slate 300 */
+  transition: transform 0.2s;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.roleCard:hover .arrowIcon {
+  color: var(--primary);
+  transform: translateX(4px);
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+/* Animation utilities */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+  50% {
+    transform: translate(20px, 20px);
   }
 
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  100% {
+    transform: translate(0, 0);
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    text-align: center;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .heroContent {
+    align-items: center;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .brand {
+    justify-content: center;
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .roleSection {
+    margin: 0 auto;
+  }
+
+  .roleCard {
+    text-align: left;
   }
 }

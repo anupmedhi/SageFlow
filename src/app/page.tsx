@@ -1,65 +1,81 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import React from 'react';
+import Link from 'next/link';
+import { ArrowRight, BookOpen, GraduationCap, Users } from 'lucide-react';
+import { LogoIcon } from '@/components/ui/Logo';
+import styles from './page.module.css';
+
+export default function LandingPage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className={styles.container}>
+      {/* Background Shapes */}
+      <div className={styles.blob1} />
+      <div className={styles.blob2} />
+
+      <main className={styles.content}>
+
+        {/* Left Side: Brand & Hero */}
+        {/* ... imports ... */}
+
+        <div className={styles.heroContent}>
+          <div className={styles.brand}>
+            <LogoIcon size={56} />
+            <span className={styles.brandName}>SageFlow</span>
+          </div>
+
+          <h1 className={styles.title}>
+            Growth starts <br /> with reflection.
+          </h1>
+          <p className={styles.subtitle}>
+            Empowering students to build healthy habits and mental wellness.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Right Side: Role Selection */}
+        <div className={styles.roleSection}>
+          <span className={styles.roleLabel}>Select your role to continue</span>
+
+          <Link href="/student" className="block">
+            <div className={styles.roleCard}>
+              <div className={styles.roleIconWrapper} style={{ background: '#E0E7FF', color: '#4F46E5' }}>
+                <GraduationCap size={28} />
+              </div>
+              <div className={styles.roleText}>
+                <h3>I am a Student</h3>
+                <p>Track your mood & progress</p>
+              </div>
+              <ArrowRight className={styles.arrowIcon} size={24} />
+            </div>
+          </Link>
+
+          <Link href="/dashboard/parent" className="block">
+            <div className={styles.roleCard}>
+              <div className={styles.roleIconWrapper} style={{ background: '#DCFCE7', color: '#10B981' }}>
+                <Users size={28} />
+              </div>
+              <div className={styles.roleText}>
+                <h3>I am a Parent</h3>
+                <p>View your child's insights</p>
+              </div>
+              <ArrowRight className={styles.arrowIcon} size={24} />
+            </div>
+          </Link>
+
+          <Link href="/dashboard/teacher" className="block">
+            <div className={styles.roleCard}>
+              <div className={styles.roleIconWrapper} style={{ background: '#FEE2E2', color: '#EF4444' }}>
+                <BookOpen size={28} />
+              </div>
+              <div className={styles.roleText}>
+                <h3>I am a Teacher</h3>
+                <p>Monitor class wellbeing</p>
+              </div>
+              <ArrowRight className={styles.arrowIcon} size={24} />
+            </div>
+          </Link>
         </div>
+
       </main>
     </div>
   );
