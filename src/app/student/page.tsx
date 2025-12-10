@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/Button';
 import styles from './student.module.css';
 
 export default function StudentDashboard() {
+    const [selectedMood, setSelectedMood] = React.useState<string | null>(null);
+
     return (
         <div>
             <div style={{ marginBottom: '2rem' }}>
@@ -15,10 +17,12 @@ export default function StudentDashboard() {
             </div>
 
             <div className={styles.grid}>
-                {/* Main Column */}
+                {/* ... Main content ... */}
                 <div className={styles.mainColumn}>
 
+                    {/* ... Check In Card ... */}
                     <div className={`${styles.checkInCard} animate-float-delayed`}>
+                        {/* ... (keep content same) ... */}
                         <div className={styles.checkInContent}>
                             <h2 className={styles.checkInTitle}>Weekly Check-in</h2>
                             <p className={styles.checkInText}>
@@ -45,7 +49,11 @@ export default function StudentDashboard() {
                                 { label: 'Down', emoji: '🙁' },
                                 { label: 'Tired', emoji: '😫' }
                             ].map((mood, i) => (
-                                <button key={i} className={styles.moodBtn}>
+                                <button
+                                    key={i}
+                                    className={`${styles.moodBtn} ${selectedMood === mood.label ? styles.activeMood : ''}`}
+                                    onClick={() => setSelectedMood(mood.label)}
+                                >
                                     <span className={styles.moodEmoji}>{mood.emoji}</span>
                                     <span className={styles.moodLabel}>{mood.label}</span>
                                 </button>
