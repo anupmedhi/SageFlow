@@ -87,8 +87,9 @@ export default function CounsellorSignup() {
                                     className={styles.input}
                                     style={{ paddingLeft: '3rem', appearance: 'none', cursor: 'pointer' }}
                                     required
+                                    defaultValue=""
                                 >
-                                    <option value="" disabled selected>Specialization</option>
+                                    <option value="" disabled>Specialization</option>
                                     <option value="clinical_psychologist">Clinical Psychologist</option>
                                     <option value="psychiatrist">Psychiatrist</option>
                                     <option value="counsellor">School Counsellor</option>

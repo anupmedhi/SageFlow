@@ -99,7 +99,7 @@ export default function CounsellorLogin() {
 
                     <button type="button" className={styles.joinButton} onClick={handleJoin}>
                         <UserPlus size={18} />
-                        Join as Psychologist / Psychiatrist
+                        Join as a Counsellor
                     </button>
 
                 </div>
