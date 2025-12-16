@@ -1,5 +1,8 @@
 .header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .title {
@@ -14,97 +17,257 @@
     font-size: 1.125rem;
 }
 
-.overviewCard {
+.profileSection {
     background: white;
     border-radius: 24px;
-    padding: 2.5rem;
+    padding: 2rem;
     box-shadow: var(--shadow-sm);
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.childInfo {
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
 .avatar {
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     background: #E0E7FF;
     color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.stats {
-    display: flex;
-    gap: 4rem;
-}
-
-.statItem {
-    text-align: center;
-}
-
-.statValue {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text-main);
-    display: block;
-    font-family: var(--font-outfit);
 }
 
-.statLabel {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    font-weight: 500;
+.scoreGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.chartSection {
-    background: white;
-    border-radius: 24px;
-    padding: 2.5rem;
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 2.5rem;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-}
-
-.activityList {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.activityCard {
+.scoreCard {
     background: white;
     border-radius: 20px;
-    padding: 1.5rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    padding: 1.5rem;
     box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
     transition: transform 0.2s;
 }
 
-.activityCard:hover {
-    transform: translateX(4px);
+.scoreCard:hover {
+    transform: translateY(-4px);
 }
 
-.checkIcon {
-    background: #DCFCE7;
-    color: #10B981;
-    padding: 0.75rem;
+.scoreValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.scoreLabel {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gridTwoCol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.overviewCard {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 1rem;
+}
+
+.cardIcon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.aiBadge {
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.reportText {
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.recommendationList {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.recommendationItem {
+    background: #F8FAFC;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.doctorNote {
+    font-family: 'Georgia', serif;
+    /* Slight serif for formal feel */
+    background: #FEF9C3;
+    /* Light yellow post-it feel or official paper */
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: #422006;
+    line-height: 1.6;
+    margin-top: 1rem;
+    border-left: 4px solid #CA8A04;
+}
+
+@media (max-width: 900px) {
+    .gridTwoCol {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.familyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.childSelectorCard {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.childSelectorCard.active {
+    border-color: #10B981;
+    background: #F0FDF4;
+}
+
+.childSelectorCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.childAvatar {
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.familyHarmonyCard {
+    background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+    border-radius: 24px;
+    padding: 2.5rem;
+    color: white;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.harmonyContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.harmonyMetric {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    flex-shrink: 0;
+}
+
+.topicCard {
+    background: white;
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .harmonyContent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

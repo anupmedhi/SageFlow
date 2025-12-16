@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { Flame, Star, BookOpen, Clock, PlayCircle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import styles from './student.module.css';
+import StudentStatsRow from './components/StatsRow';
+import MemoryGame from './components/MemoryGame';
+import StudentActivityChart from './components/ActivityChart';
 
 export default function StudentDashboard() {
     const [selectedMood, setSelectedMood] = React.useState<string | null>(null);
@@ -15,6 +18,8 @@ export default function StudentDashboard() {
                 <h1 className={styles.title}>Welcome back, Alex! 👋</h1>
                 <p className={styles.subtitle}>Ready to start your week?</p>
             </div>
+
+            <StudentStatsRow />
 
             <div className={styles.grid}>
                 {/* ... Main content ... */}
@@ -61,6 +66,10 @@ export default function StudentDashboard() {
                         </div>
                     </div>
 
+                    <StudentActivityChart />
+
+                    <MemoryGame />
+
                     <div className={styles.section}>
                         <div className={styles.sectionHeader}>
                             <h3 className={styles.sectionTitle}>Recommended for you</h3>
@@ -92,26 +101,6 @@ export default function StudentDashboard() {
 
                 {/* Side Column */}
                 <div className={styles.sideColumn}>
-
-                    <div className={styles.statCard}>
-                        <div className={styles.statIcon} style={{ background: '#FF7675' }}>
-                            <Flame size={24} />
-                        </div>
-                        <div className={styles.statInfo}>
-                            <h4>Current Streak</h4>
-                            <div>5 Days</div>
-                        </div>
-                    </div>
-
-                    <div className={styles.statCard}>
-                        <div className={styles.statIcon} style={{ background: '#FDCB6E' }}>
-                            <Star size={24} />
-                        </div>
-                        <div className={styles.statInfo}>
-                            <h4>Total Points</h4>
-                            <div>1,250</div>
-                        </div>
-                    </div>
 
                     <div className={styles.section} style={{ flex: 1 }}>
                         <h3 className={styles.sectionTitle} style={{ marginBottom: '1rem' }}>History</h3>

@@ -85,6 +85,61 @@ export default function HistoryPage() {
                 </div>
             </div>
 
+            <div style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+                <h2 className={styles.sectionTitle}>Class Leaderboard 🏆</h2>
+                <div style={{ background: 'white', borderRadius: '24px', padding: '1.5rem', boxShadow: 'var(--shadow-sm)' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                        <thead>
+                            <tr style={{ borderBottom: '1px solid #F1F5F9', textAlign: 'left' }}>
+                                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>Rank</th>
+                                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>Student</th>
+                                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>Points</th>
+                                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {[
+                                { rank: 1, name: 'Sarah K.', points: 1450, trend: 'up' },
+                                { rank: 2, name: 'Mike R.', points: 1320, trend: 'up' },
+                                { rank: 3, name: 'Emma W.', points: 1290, trend: 'same' },
+                                { rank: 4, name: 'Alex M.', points: 1250, trend: 'up', isMe: true },
+                                { rank: 5, name: 'David L.', points: 1180, trend: 'down' },
+                            ].map((student) => (
+                                <tr key={student.rank} style={{
+                                    borderBottom: '1px solid #F8FAFC',
+                                    background: student.isMe ? '#F5F3FF' : 'transparent',
+                                    fontWeight: student.isMe ? '700' : '500'
+                                }}>
+                                    <td style={{ padding: '1rem' }}>
+                                        <div style={{
+                                            width: '24px', height: '24px',
+                                            background: student.rank === 1 ? '#FEF3C7' : '#F1F5F9',
+                                            color: student.rank === 1 ? '#D97706' : '#64748B',
+                                            borderRadius: '50%',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            fontSize: '0.75rem', fontWeight: '700'
+                                        }}>
+                                            {student.rank}
+                                        </div>
+                                    </td>
+                                    <td style={{ padding: '1rem', color: student.isMe ? '#4F46E5' : 'var(--text-main)' }}>
+                                        {student.name} {student.isMe && '(You)'}
+                                    </td>
+                                    <td style={{ padding: '1rem', fontFamily: 'var(--font-outfit)' }}>
+                                        {student.points}
+                                    </td>
+                                    <td style={{ padding: '1rem' }}>
+                                        {student.trend === 'up' && <span style={{ color: '#10B981' }}>↗️</span>}
+                                        {student.trend === 'same' && <span style={{ color: '#94A3B8' }}>➡️</span>}
+                                        {student.trend === 'down' && <span style={{ color: '#EF4444' }}>↘️</span>}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <h2 className={styles.sectionTitle}>Recent Check-ins</h2>
             <div className={styles.historyList}>
                 <div className={styles.historyItem}>

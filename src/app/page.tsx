@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, GraduationCap, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, GraduationCap, HeartHandshake, Users } from 'lucide-react';
 import { LogoIcon } from '@/components/ui/Logo';
 import styles from './page.module.css';
 
@@ -36,7 +36,7 @@ export default function LandingPage() {
         <div className={styles.roleSection}>
           <span className={styles.roleLabel}>Select your role to continue</span>
 
-          <Link href="/student" className="block">
+          <Link href="/auth/student/login" className="block">
             <div className={styles.roleCard}>
               <div className={styles.roleIconWrapper} style={{ background: '#E0E7FF', color: '#4F46E5' }}>
                 <GraduationCap size={28} />
@@ -49,7 +49,7 @@ export default function LandingPage() {
             </div>
           </Link>
 
-          <Link href="/dashboard/parent" className="block">
+          <Link href="/auth/parent/login" className="block">
             <div className={styles.roleCard}>
               <div className={styles.roleIconWrapper} style={{ background: '#DCFCE7', color: '#10B981' }}>
                 <Users size={28} />
@@ -62,7 +62,7 @@ export default function LandingPage() {
             </div>
           </Link>
 
-          <Link href="/dashboard/teacher" className="block">
+          <Link href="/auth/teacher/login" className="block">
             <div className={styles.roleCard}>
               <div className={styles.roleIconWrapper} style={{ background: '#FEE2E2', color: '#EF4444' }}>
                 <BookOpen size={28} />
@@ -70,6 +70,19 @@ export default function LandingPage() {
               <div className={styles.roleText}>
                 <h3>I am a Teacher</h3>
                 <p>Monitor class wellbeing</p>
+              </div>
+              <ArrowRight className={styles.arrowIcon} size={24} />
+            </div>
+          </Link>
+
+          <Link href="/auth/counsellor/login" className="block">
+            <div className={styles.roleCard}>
+              <div className={styles.roleIconWrapper} style={{ background: '#FEF3C7', color: '#D97706' }}>
+                <HeartHandshake size={28} />
+              </div>
+              <div className={styles.roleText}>
+                <h3>I am a Counsellor</h3>
+                <p>Provide guidance & support</p>
               </div>
               <ArrowRight className={styles.arrowIcon} size={24} />
             </div>

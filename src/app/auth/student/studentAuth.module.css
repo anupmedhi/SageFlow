@@ -1,0 +1,165 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1E1B4B;
+    /* Deep Indigo */
+    padding: 2rem;
+    font-family: var(--font-inter);
+}
+
+.mainCard {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 500px;
+    min-height: auto;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.leftSection {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-outfit);
+}
+
+.subtitle {
+    color: #64748B;
+    font-size: 0.95rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    font-size: 0.95rem;
+    color: #1E293B;
+    transition: all 0.2s;
+    outline: none;
+    font-family: var(--font-inter);
+}
+
+.input:focus {
+    border-color: #4F46E5;
+    /* Indigo accent */
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.input::placeholder {
+    color: #94A3B8;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 9999px;
+    background: #4F46E5;
+    /* Indigo */
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: var(--font-outfit);
+    transition: all 0.2s;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.submitButton:hover {
+    background: #4338CA;
+    transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.backLink {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.backLink:hover {
+    color: #1E293B;
+}
+
+.link {
+    text-align: center;
+    color: #64748B;
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: #4F46E5;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .mainCard {
+        border-radius: 24px;
+        padding: 0;
+    }
+
+    .leftSection {
+        padding: 2rem;
+    }
+}
