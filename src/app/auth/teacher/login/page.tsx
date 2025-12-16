@@ -34,8 +34,8 @@ export default function TeacherLogin() {
                         <div style={{
                             width: '48px',
                             height: '48px',
-                            background: '#FEE2E2',
-                            color: '#EF4444',
+                            background: '#EEF2FF',
+                            color: '#4F46E5', /* Indigo to match app */
                             borderRadius: '12px',
                             display: 'flex',
                             alignItems: 'center',
@@ -49,6 +49,17 @@ export default function TeacherLogin() {
                     </div>
 
                     <form onSubmit={handleSubmit} className={styles.form}>
+                        <div style={{ position: 'relative' }}>
+                            <User size={18} style={{ position: 'absolute', top: '50%', left: '1rem', transform: 'translateY(-50%)', color: '#94A3B8' }} />
+                            <input
+                                type="text"
+                                className={styles.input}
+                                placeholder="Employee ID"
+                                style={{ paddingLeft: '3rem' }}
+                                required
+                            />
+                        </div>
+
                         <div style={{ position: 'relative' }}>
                             <Mail size={18} style={{ position: 'absolute', top: '50%', left: '1rem', transform: 'translateY(-50%)', color: '#94A3B8' }} />
                             <input
@@ -76,7 +87,7 @@ export default function TeacherLogin() {
                                 <input type="checkbox" style={{ borderRadius: '4px' }} />
                                 Remember me
                             </label>
-                            <span style={{ cursor: 'pointer', color: '#EF4444' }}>Forgot password?</span>
+                            <span style={{ cursor: 'pointer', color: '#4F46E5' }}>Forgot password?</span>
                         </div>
 
                         <button
@@ -90,7 +101,7 @@ export default function TeacherLogin() {
 
                     <div className={styles.divider}>New Faculty?</div>
 
-                    <button type="button" className={styles.submitButton} style={{ background: '#FFF1F2', color: '#EF4444', border: '1px solid #FECDD3', marginTop: 0 }}>
+                    <button type="button" className={styles.submitButton} style={{ background: '#EEF2FF', color: '#4F46E5', border: '1px solid #E0E7FF', marginTop: 0 }}>
                         <UserPlus size={18} />
                         Create Faculty Account
                     </button>

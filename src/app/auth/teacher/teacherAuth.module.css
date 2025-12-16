@@ -3,8 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #450A0A;
-    /* Deep Red for Teachers */
+    background: #F8FAFC;
+    /* White / Very light slate */
     padding: 2rem;
     font-family: var(--font-inter);
 }
@@ -17,10 +17,13 @@
     border-radius: 32px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+    /* Lighter shadow for white bg */
     position: relative;
     animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
+    border: 1px solid #E2E8F0;
+    /* Subtle border since bg is light */
 }
 
 .leftSection {
@@ -60,7 +63,8 @@
     padding: 1rem 1.5rem;
     border-radius: 16px;
     border: 1px solid #E2E8F0;
-    background: #F8FAFC;
+    background: #FFFFFF;
+    /* Pure white input on light bg */
     font-size: 0.95rem;
     color: #1E293B;
     transition: all 0.2s;
@@ -69,10 +73,10 @@
 }
 
 .input:focus {
-    border-color: #EF4444;
-    /* Red accent */
+    border-color: #4F46E5;
+    /* Indigo accent */
     background: #FFFFFF;
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
 }
 
 .input::placeholder {
@@ -83,8 +87,8 @@
     width: 100%;
     padding: 1rem;
     border-radius: 9999px;
-    background: #EF4444;
-    /* Red */
+    background: #4F46E5;
+    /* Indigo like the whole app */
     color: white;
     font-weight: 600;
     border: none;
@@ -93,7 +97,7 @@
     font-family: var(--font-outfit);
     transition: all 0.2s;
     margin-top: 1rem;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +105,7 @@
 }
 
 .submitButton:hover {
-    background: #DC2626;
+    background: #4338CA;
     transform: translateY(-1px);
 }
 
