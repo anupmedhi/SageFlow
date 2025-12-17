@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
-import { RefreshCw, Sparkles } from 'lucide-react';
+import { RefreshCw, Sparkles, BrainCircuit } from 'lucide-react'; // Added BrainCircuit for card back
 import styles from '../student.module.css';
 
 const GAME_ITEMS = [
@@ -11,6 +11,8 @@ const GAME_ITEMS = [
     { emoji: '📚', bg: '#F1F5F9', text: '#475569' }, // Slate
     { emoji: '🎨', bg: '#FFEDD5', text: '#C2410C' }, // Orange
     { emoji: '🎵', bg: '#DCFCE7', text: '#166534' }, // Green
+    { emoji: '🚀', bg: '#E0F2FE', text: '#0284C7' }, // Sky
+    { emoji: '💎', bg: '#F3E8FF', text: '#9333EA' }, // Purple
 ];
 
 interface Card {
@@ -53,10 +55,8 @@ export default function MemoryGame() {
     };
 
     const handleCardClick = (index: number) => {
-        // ignore if already flipped or matched, or if 2 cards already flipped
         if (cards[index].isFlipped || cards[index].isMatched || flippedCards.length >= 2) return;
 
-        // flip the card
         const newCards = [...cards];
         newCards[index].isFlipped = true;
         setCards(newCards);
@@ -64,7 +64,6 @@ export default function MemoryGame() {
         const newFlipped = [...flippedCards, index];
         setFlippedCards(newFlipped);
 
-        // if 2 cards flipped, check match
         if (newFlipped.length === 2) {
             checkForMatch(newFlipped, newCards);
         }
@@ -74,7 +73,6 @@ export default function MemoryGame() {
         const [idx1, idx2] = flippedIndices;
 
         if (currentCards[idx1].content === currentCards[idx2].content) {
-            // Match!
             setTimeout(() => {
                 const newCards = [...currentCards];
                 newCards[idx1].isMatched = true;
@@ -89,7 +87,6 @@ export default function MemoryGame() {
                 }
             }, 500);
         } else {
-            // No match
             setTimeout(() => {
                 const newCards = [...currentCards];
                 newCards[idx1].isFlipped = false;
@@ -101,24 +98,36 @@ export default function MemoryGame() {
     };
 
     return (
-        <div className={styles.section} style={{ marginTop: '2rem' }}>
-            <div className={styles.sectionHeader}>
+        <div>
+            <div className={styles.sectionHeader} style={{ marginBottom: '1.5rem' }}>
                 <div>
-                    <h3 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        Mind Match <Sparkles size={20} color="#F59E0B" />
+                    <h3 className={styles.sectionTitle} style={{ fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        Mind Match <Sparkles size={18} color="#F59E0B" fill="#F59E0B" />
                     </h3>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Match the pairs to boost your focus!</p>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Match pairs to boost focus!</p>
                 </div>
-                <Button size="sm" variant="ghost" onClick={initializeGame}>
-                    <RefreshCw size={16} style={{ marginRight: '0.5rem' }} /> Restart
+                <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={initializeGame}
+                    style={{
+                        color: 'var(--text-muted)',
+                        background: '#F1F5F9',
+                        borderRadius: '99px',
+                        padding: '0.5rem 1rem',
+                        height: 'auto',
+                        fontSize: '0.85rem'
+                    }}
+                >
+                    <RefreshCw size={14} style={{ marginRight: '0.5rem' }} /> Restart
                 </Button>
             </div>
 
             <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: '12px',
-                maxWidth: '360px',
+                gap: '1rem',
+                maxWidth: '380px',
                 margin: '0 auto',
                 perspective: '1000px'
             }}>
@@ -127,26 +136,52 @@ export default function MemoryGame() {
                         key={card.id}
                         onClick={() => handleCardClick(index)}
                         style={{
-                            height: '70px',
-                            background: card.isFlipped || card.isMatched ? card.bg : '#6C5CE7',
-                            borderRadius: '12px',
+                            aspectRatio: '1',
+                            background: card.isFlipped || card.isMatched
+                                ? card.bg
+                                : 'linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)',
+                            borderRadius: '16px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '2rem',
                             cursor: 'pointer',
-                            transition: 'all 0.4s',
+                            transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                             transform: card.isFlipped || card.isMatched ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                            boxShadow: card.isFlipped || card.isMatched ? '0 4px 12px rgba(0,0,0,0.1)' : '0 4px 0 #5a4ad1',
-                            border: card.isMatched ? `2px solid ${card.text}` : 'none'
+                            boxShadow: card.isFlipped || card.isMatched
+                                ? '0 4px 6px rgba(0,0,0,0.05)'
+                                : '0 10px 15px -3px rgba(124, 58, 237, 0.3), 0 4px 6px -2px rgba(124, 58, 237, 0.1)',
+                            border: card.isMatched ? `2px solid ${card.text}` : '2px solid transparent',
+                            position: 'relative'
                         }}
+                        className="hover:scale-105"
                     >
+                        {/* Front (Emoji) */}
                         <div style={{
-                            transform: 'rotateY(180deg)', /* Counter flight flip text so it looks right */
+                            transform: 'rotateY(180deg)',
                             opacity: card.isFlipped || card.isMatched ? 1 : 0,
-                            color: card.isFlipped || card.isMatched ? card.text : 'inherit'
+                            position: 'absolute',
+                            inset: 0,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'opacity 0.2s',
+                            color: card.text
                         }}>
                             {card.content}
+                        </div>
+
+                        {/* Back (Pattern) */}
+                        <div style={{
+                            opacity: card.isFlipped || card.isMatched ? 0 : 1,
+                            position: 'absolute',
+                            inset: 0,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: 'rgba(255,255,255,0.3)'
+                        }}>
+                            <BrainCircuit size={24} />
                         </div>
                     </div>
                 ))}

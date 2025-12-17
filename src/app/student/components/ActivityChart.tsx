@@ -15,7 +15,7 @@ const moodTrends = [
 
 export default function StudentActivityChart() {
     return (
-        <div className={styles.section} style={{ height: '400px', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
             <div className={styles.sectionHeader}>
                 <h3 className={styles.sectionTitle}>Your Mood Flow</h3>
             </div>
