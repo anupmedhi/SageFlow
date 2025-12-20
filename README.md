@@ -2,8 +2,6 @@
 
 A premium, modern web + mobile application designed to track and improve student mental wellbeing through intuitive role-based portals. Built with a focus on psychological safety, calming aesthetics, and actionable insights.
 
-![SageFlow Landing](public/images/teacher-login-bg.png) 
-*(Note: Replace with actual screenshot of landing page)*
 
 ## 🚀 Key Features
 
